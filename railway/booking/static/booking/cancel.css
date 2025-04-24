@@ -1,0 +1,88 @@
+
+
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f4f4f9;
+	color: #212529;
+}
+
+header {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #0066cc;
+	color: #fff;
+	padding: 1rem 0;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header > *:first-child {
+	margin-left: 2rem;
+}
+
+header > *:last-child {
+	margin-right: 2rem;
+}
+
+h1 {
+	margin: 0;
+	font-size: 2rem;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2rem 1rem;
+	margin-bottom: 2rem;
+}
+
+.cancellation {
+	margin-top: 2em;
+	width: 100%;
+	max-width: 900px;
+	background-color: #d65d57c4;
+	border: 5px solid #b70000;
+	border-radius: 5px;
+}
+
+.cancellation p {
+	margin-bottom: auto 0;
+	text-align: center;
+	font-size: 2rem;
+	color: #550000;
+}
+
+
+a {
+	margin-top: 2rem;
+	padding: 0.75rem;
+	background-color: #0066cc;
+	text-decoration: none;
+	padding: 0.75em 1em;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 1rem;
+	font-weight: 600;
+	transition: background-color 0.2s, transform 0.1s;
+}
+
+a:hover {
+	background-color: #0055aa;
+}
+
+a:active {
+	transform: translateY(1px);
+}
+
+.error_message{
+	margin-top: 2rem;
+	font-size: 3rem;
+	opacity: 60%;
+
+}

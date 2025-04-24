@@ -1,0 +1,289 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f4f4f9;
+	color: #212529;
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+	gap: 1.25em;
+}
+
+header {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #0066cc;
+	color: #fff;
+	padding: 1rem 0;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header > *:first-child {
+	margin-left: 2rem;
+}
+
+header > *:last-child {
+	margin-right: 2rem;
+}
+
+h1 {
+	margin: 0;
+	font-size: 2rem;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2rem 1rem;
+	margin-bottom: 2rem;
+}
+
+
+button {
+	padding: 0.75rem;
+	background-color: #0066cc;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 1rem;
+	font-weight: 600;
+	transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+	background-color: #0055aa;
+}
+
+button:active {
+	transform: translateY(1px);
+}
+
+/* Results Section Styles */
+.results-section {
+	width: 100%;
+	max-width: 800px;
+}
+
+.results-section h2 {
+	margin-bottom: 1.5rem;
+	text-align: center;
+	color: #212529;
+}
+
+.card-container {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.train-card {
+	background: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	padding: 1.5rem;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	gap: 1.25rem;
+	transition: transform 0.2s, box-shadow 0.2s;
+	border: 1px solid #e9ecef;
+}
+.train-header {
+	padding: 1.5rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.25rem;
+}
+
+.info {
+	border-top: 3px solid rgb(0, 57, 155);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.train-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.train-info {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	flex: 1;
+	min-width: 200px;
+}
+
+.train-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #e6f0ff;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	padding: 8px;
+}
+
+.train-details {
+	display: flex;
+	flex-direction: column;
+}
+
+.train-name {
+	font-weight: bold;
+	font-size: 1.1rem;
+	color: #212529;
+}
+
+.train-number {
+	color: #6c757d;
+	font-size: 0.9rem;
+}
+
+.journey-info {
+	display: flex;
+	flex-direction: column;
+	flex: 2;
+	min-width: 300px;
+}
+
+.time-info {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.departure,
+.arrival {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.time {
+	font-weight: bold;
+	font-size: 1.2rem;
+	color: #212529;
+}
+
+.date {
+	font-size: 0.8rem;
+	color: #6c757d;
+	margin: 0.2rem 0;
+}
+
+.station {
+	font-size: 0.9rem;
+	color: #495057;
+	text-align: center;
+}
+
+.journey-details {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.3rem;
+}
+
+.distance {
+	font-size: 0.8rem;
+	color: #6c757d;
+	background-color: #e9ecef;
+	padding: 0.2rem 0.6rem;
+	border-radius: 12px;
+}
+
+.journey-line {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.duration {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: #495057;
+	font-size: 0.9rem;
+	background-color: #f1f3f5;
+	padding: 0.3rem 0.8rem;
+	border-radius: 16px;
+}
+
+
+.CONFIRMED{
+	color: #28a745;
+}
+
+
+.RAC {
+	color: #ffc107;
+}
+
+.WL {
+	color: #dc3545;
+}
+
+.status-info.CANCELLED {
+	color: #585858;
+}
+
+.error_message{
+	margin-top: 2rem;
+	font-size: 3rem;
+	opacity: 60%;
+
+}
+
+.status-info {
+	display: inline-block;
+	width: 8ch;
+	margin: 0.25em 0 0 0;
+	text-align: right;
+}
+
+.info2::before{
+	display: inline;
+	color: #000;
+	content: "CURRENT STATUS: ";
+	position: absolute;
+	font-size: 1.17em;
+	font-weight: bold;
+	margin: 0.25em 0 0 0;
+	transform: translateX(-100%);
+	width: max-content;
+}
+
+.cancel-btn {
+	margin-top: 0.5em;
+	color: #fff;
+	background-color: #dc3545;
+	border: none;
+	cursor: pointer;
+	font-weight: bold;
+	padding: 1em;
+	border-radius: 5px;
+	transition: background-color 0.2s;
+}
+
+.cancel-btn.CANCELLED{
+	opacity: 0;
+	pointer-events: none;
+}
+
+.cancel-btn:hover {
+	background-color: #b52c39;
+}
+

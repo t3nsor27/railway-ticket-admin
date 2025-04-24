@@ -1,0 +1,98 @@
+/* Base styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Table container */
+.table-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+	width: 100%;
+}
+
+/* Table styles */
+.minimalist-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95em;
+}
+
+/* Header styles */
+.minimalist-table thead {
+    background-color: #f8f9fa;
+}
+
+.minimalist-table th {
+    padding: 16px;
+    font-weight: 600;
+    color: #495057;
+    border-bottom: 2px solid #e9ecef;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.5px;
+}
+
+/* Cell styles */
+.minimalist-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #f1f1f1;
+    vertical-align: middle;
+}
+
+/* Row styles */
+.minimalist-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.minimalist-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.minimalist-table tbody tr.even-row {
+    background-color: #fcfcfc;
+}
+
+/* Last row */
+.minimalist-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* No data message */
+.no-data {
+    padding: 20px;
+    text-align: center;
+    color: #6c757d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .minimalist-table {
+        font-size: 0.85em;
+    }
+    
+    .minimalist-table th,
+    .minimalist-table td {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .table-container {
+        border-radius: 0;
+        box-shadow: none;
+    }
+    
+    .minimalist-table th {
+        font-size: 0.8em;
+    }
+}

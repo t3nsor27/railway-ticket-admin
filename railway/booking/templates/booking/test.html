@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>INDEX</title>
+	<link rel="stylesheet" href="{% static 'booking/table_style.css' %}">
+</head>
+<body>
+	{% load list_utils %}
+	<div class="table-container">
+		{% if row_data and column_names %}
+			{% for _ in row_data %}
+				{% with idx=forloop.counter0 %}
+					<table class="minimalist-table">
+						<thead>
+							<tr>
+								{% for column in column_names|index:idx %}
+									<th>{{ column }}</th>
+								{% endfor %}
+							</tr>
+						</thead>
+						<tbody>
+							{% for row in row_data|index:idx %}
+								<tr {% if forloop.counter|divisibleby:2 %}class="even-row"{% endif %}>
+									{% for cell in row %}
+										<td>{{ cell }}</td>
+									{% endfor %}
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+					<br>
+				{% endwith %}
+			{% endfor %}
+		{% else %}
+			<p class="no-data">No data available to display</p>
+		{% endif %}
+	</div>
+	
+	<p>
+		{{ extra|safe }}
+	</p>
+</body>
+</html>

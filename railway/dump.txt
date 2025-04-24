@@ -1,0 +1,78 @@
+{% if row_data %}
+					{% for row in row_date %}
+						<div class="train-card">
+							<div class="train-info">
+								<div class="train-icon">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M4 15.5C4 17.43 5.57 19 7.5 19L6 20.5V21H18V20.5L16.5 19C18.43 19 20 17.43 20 15.5V5C20 2.5 18 0 12 0C6 0 4 2.5 4 5V15.5ZM12 2C17.5 2 18 4 18 5H6C6 4 6.5 2 12 2ZM6 7H18V15.5C18 16.33 17.33 17 16.5 17H7.5C6.67 17 6 16.33 6 15.5V7Z" fill="#0066cc"/>
+										<path d="M8.5 14C9.33 14 10 13.33 10 12.5C10 11.67 9.33 11 8.5 11C7.67 11 7 11.67 7 12.5C7 13.33 7.67 14 8.5 14Z" fill="#0066cc"/>
+										<path d="M15.5 14C16.33 14 17 13.33 17 12.5C17 11.67 16.33 11 15.5 11C14.67 11 14 11.67 14 12.5C14 13.33 14.67 14 15.5 14Z" fill="#0066cc"/>
+									</svg>
+								</div>
+								<div class="train-details">
+									<div class="train-name">{{ row.train_name }}</div>
+									<div class="train-number">{{ row.train_no }}</div>
+								</div>
+							</div>
+							<div class="journey-info">
+								<div class="time-info">
+									<div class="departure">
+										<div class="time">{{ row.departure_time }}</div>
+										<div class="date">{{ row.departure_date }}</div>
+										<div class="station">{{ row.departure_station }}</div>
+									</div>
+									<div class="journey-details">
+										<div class="distance">{{ row.distance }}</div>
+										<div class="journey-line">
+											<svg width="100" height="24" viewBox="0 0 100 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<line x1="0" y1="12" x2="100" y2="12" stroke="#0066cc" stroke-width="1" stroke-dasharray="2 2"/>
+												<circle cx="0" cy="12" r="3" fill="#0066cc"/>
+												<circle cx="100" cy="12" r="3" fill="#0066cc"/>
+											</svg>
+										</div>
+										<div class="duration">
+											<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M8 0C3.58 0 0 3.58 0 8C0 12.42 3.58 16 8 16C12.42 16 16 12.42 16 8C16 3.58 12.42 0 8 0ZM8 14C4.69 14 2 11.31 2 8C2 4.69 4.69 2 8 2C11.31 2 14 4.69 14 8C14 11.31 11.31 14 8 14ZM8.5 4H7V9L11.25 11.52L12 10.24L8.5 8.15V4Z" fill="#555"/>
+											</svg>
+											<span>{{ row.duration }}</span>
+										</div>
+									</div>
+									<div class="arrival">
+										<div class="time">{{ row.arrival_time }}</div>
+										<div class="date">{{ row.arrival_date }}</div>
+										<div class="station">{{ row.arrival_station }}</div>
+									</div>
+								</div>
+							</div>
+							<form class="booking-form" method="POST">
+								<input type="hidden" name="train_id" value="{{ row.train_no }}">
+								<div class="class-info">
+									<label class="class-card available">
+										<input type="radio" name="class-selection" value="SL" required>
+										<div class="class-name">SL</div>
+										<div class="class-status">AVL 10</div>
+									</label>
+									<label class="class-card available">
+										<input type="radio" name="class-selection" value="3A">
+										<div class="class-name">3A</div>
+										<div class="class-status">AVL 5</div>
+									</label>
+									<label class="class-card rac">
+										<input type="radio" name="class-selection" value="2A">
+										<div class="class-name">2A</div>
+										<div class="class-status">RAC 2</div>
+									</label>
+									<label class="class-card waitlist">
+										<input type="radio" name="class-selection" value="1A">
+										<div class="class-name">1A</div>
+										<div class="class-status">WL 4</div>
+									</label>
+								</div>
+								<div class="price-info">
+									<div class="price">$42</div>
+									<button type="submit" class="book-btn">Book</button>
+								</div>
+							</form>
+						</div>
+					{% endfor %}
+				{% endif %}

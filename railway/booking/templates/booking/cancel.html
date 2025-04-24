@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cancellation</title>
+	<link rel="stylesheet" href="{% static 'booking/cancel.css' %}">
+</head>
+<body>
+	{% load list_utils %}
+	
+	<header>
+		<p>USER: {{ username }}</p>
+		<h1>Cancellation</h1>
+		<div style="opacity:0; width:min-content;">USER: {{ username }}</div>
+	</header>
+	<main>
+		
+		{% if not error_message %}
+			{{ debug }}
+			<section class="cancellation">
+				<p>Ticket Cancelled</p>
+			</section>
+			<a href="{% url 'booking:home' %}">HOME</a>
+			
+		{% endif %}
+
+		{% if error_message %}
+			<div class="error_message">
+				{{ error_message }}
+			</div>
+		{% endif %}
+	</main>
+</body>
+</html>
